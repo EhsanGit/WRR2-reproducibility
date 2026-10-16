@@ -1,0 +1,11 @@
+name: wrr2
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - seaborn>=0.13
+  - requests

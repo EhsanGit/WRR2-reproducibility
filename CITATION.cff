@@ -1,0 +1,84 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below, together with the accompanying article."
+title: "Codebase for: Assessing the Added Value of Earth Observations for Multi-Model Kilometre-Scale Hydrological Modelling Across Contrasting Basins"
+authors:
+  - family-names: Modiri
+    given-names: Ehsan
+    affiliation: "Helmholtz Centre for Environmental Research - UFZ"
+    email: ehsan.modiri@ufz.de
+    orcid: "https://orcid.org/0000-0002-4432-0343"
+version: 1.0.0
+# doi: 10.5281/zenodo.XXXXXXX   (software DOI, add after the Zenodo release)
+date-released: 2026-10-16
+license: MIT
+repository-code: "https://github.com/EhsanGit/WRR2-reproducibility"
+keywords:
+  - hydrological modelling
+  - Earth observation
+  - calibration
+  - multi-model benchmarking
+  - Kling-Gupta efficiency
+  - 4DHydro
+references:
+  - type: article
+    title: "Assessing the Added Value of Earth Observations for Multi-Model Kilometre-Scale Hydrological Modelling Across Contrasting Basins"
+    journal: "Water Resources Research"
+    status: submitted
+    # doi: 10.1029/2025WR042446   (add once the article is published)
+    authors:
+      - family-names: "Modiri"
+        given-names: "Ehsan"
+      - family-names: "Rakovec"
+        given-names: "Oldrich"
+      - family-names: "Shrestha"
+        given-names: "Pallav Kumar"
+      - family-names: "García-García"
+        given-names: "Almudena"
+      - family-names: "Avila"
+        given-names: "Leandro"
+      - family-names: "Blackford"
+        given-names: "Katie"
+      - family-names: "Cooper"
+        given-names: "Elizabeth"
+      - family-names: "Cortes-Torres"
+        given-names: "Nicolas"
+      - family-names: "Di Paolo"
+        given-names: "Federico"
+      - family-names: "Droppers"
+        given-names: "Bram"
+      - family-names: "Filippucci"
+        given-names: "Paolo"
+      - family-names: "Fischer"
+        given-names: "Milan"
+      - family-names: "Güiza-Villa"
+        given-names: "Nathaly"
+      - family-names: "Orság"
+        given-names: "Matěj"
+      - family-names: "Stradiotti"
+        given-names: "Pietro"
+      - family-names: "Wiggins"
+        given-names: "Matthew"
+      - family-names: "Brocca"
+        given-names: "Luca"
+      - family-names: "Clark"
+        given-names: "Douglas"
+      - family-names: "Dall'Amico"
+        given-names: "Matteo"
+      - family-names: "Dorigo"
+        given-names: "Wouter"
+      - family-names: "Frances"
+        given-names: "Felix"
+      - family-names: "Kollet"
+        given-names: "Stefan"
+      - family-names: "Peng"
+        given-names: "Jian"
+      - family-names: "Wanders"
+        given-names: "Niko"
+      - family-names: "Samaniego"
+        given-names: "Luis"
+  # - type: dataset
+  #   title: "Gauge-level streamflow KGE for: Assessing the Added Value of Earth Observations ..."
+  #   doi: 10.5281/zenodo.XXXXXXX   (dataset DOI, add after the Zenodo upload)
+  #   authors:
+  #     - family-names: Modiri
+  #       given-names: Ehsan

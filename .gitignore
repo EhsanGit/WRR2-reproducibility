@@ -1,0 +1,12 @@
+# Data are distributed separately via Zenodo (see download_data.py)
+data/*
+!data/README*.md
+# Generated outputs
+output/*
+!output/.gitkeep
+# Local notes
+*_local.md
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
