@@ -32,3 +32,11 @@ dropped when gauges are paired between experiments.
 
 Simulations: 2007–2020 (daily). Observations: GRDC and national agencies, collected
 by the 4DHydro project.
+
+## Versions
+
+- **Version 1 (October 2026):** built from 80 of the 97 `performance.csv` files. Seventeen
+  files were lost in a storage failure in September 2026 and are listed in `MISSING.txt`
+  (model, experiment, basin, resolution). Figure panels and table cells that need them
+  are left empty by the scripts. A later version will add them once they have been rebuilt
+  from the archived simulations.

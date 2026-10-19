@@ -4,8 +4,8 @@ one tidy table, ready to be archived on Zenodo.
 Run once on the EVE cluster, where the benchmarking output is stored. The script
 only reads from the benchmarking tree and writes to --out (never into the source).
 It stops with an error if any of the required performance.csv files is missing,
-unless --allow-missing is given, in which case it writes a partial table to
-<out>/partial/ together with the list of missing files.
+unless --allow-missing is given, in which case it writes a partial table and a
+zip to <out>/partial/, together with the list of missing files (MISSING.txt).
 
 Inputs:
     <source>/<model>/q/<experiment>/<basin>/<resolution>/performance.csv
@@ -14,13 +14,15 @@ Outputs:
     <out>/kge/streamflow_kge_gauges_1km.csv   daily KGE and components per gauge
     <out>/kge/inputs.txt                      list of the source files used
     <out>/kge.zip                             the table in the layout expected under data/,
-                                              for upload to Zenodo (complete tables only)
+                                              for upload to Zenodo
+    <out>/partial/...                         the same with --allow-missing, plus
+                                              kge/MISSING.txt (model, experiment, basin, resolution)
 
 Usage:
     python build_data.py [--source DIR] [--out DIR] [--allow-missing]
 
 Author: Ehsan Modiri - UFZ
-Date: 2026-10-16
+Date: 2026-10-16 (partial zip 2026-10-19)
 """
 
 import argparse
@@ -85,7 +87,7 @@ def main():
     parser.add_argument('--source', default=SOURCE)
     parser.add_argument('--out', default=OUT)
     parser.add_argument('--allow-missing', action='store_true',
-                        help='write a partial table to <out>/partial/ instead of stopping')
+                        help='write a partial table and zip to <out>/partial/ instead of stopping')
     args = parser.parse_args()
 
     out = Path(args.out).resolve()
@@ -120,15 +122,19 @@ def main():
     with open(out_dir / 'inputs.txt', 'w') as fh:
         for *_, f in files:
             fh.write(f'{"MISSING " if str(f) in map(str, missing) else ""}{f}\n')
-    if missing:
-        with open(out_dir / 'MISSING.txt', 'w') as fh:
-            fh.write('\n'.join(map(str, missing)) + '\n')
-        print(f'PARTIAL table ({len(table)} rows) written to {out_dir}; do not publish it.')
-    else:
-        import zipfile
-        with zipfile.ZipFile(Path(args.out) / 'kge.zip', 'w', zipfile.ZIP_DEFLATED) as z:
-            z.write(out_dir / 'streamflow_kge_gauges_1km.csv', 'kge/streamflow_kge_gauges_1km.csv')
-        print(f'{len(table)} rows written to {out_dir}; upload {Path(args.out) / "kge.zip"} to Zenodo')
+    import zipfile
+    zip_path = out_dir.parent / 'kge.zip'
+    with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as z:
+        z.write(out_dir / 'streamflow_kge_gauges_1km.csv', 'kge/streamflow_kge_gauges_1km.csv')
+        if missing:
+            with open(out_dir / 'MISSING.txt', 'w') as fh:
+                fh.write('# performance.csv files not available for this version (model experiment basin resolution)\n')
+                for model, exp, basin, res, f in files:
+                    if not os.path.exists(f):
+                        fh.write(f'{model} {exp} {basin} {res}\n')
+            z.write(out_dir / 'MISSING.txt', 'kge/MISSING.txt')
+    print(f'{len(table)} rows from {len(files) - len(missing)} of {len(files)} files written to {out_dir}')
+    print(f'upload {zip_path} to Zenodo' + (' as a partial version (see MISSING.txt)' if missing else ''))
 
 
 if __name__ == '__main__':
