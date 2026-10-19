@@ -7,7 +7,7 @@ authors:
     affiliation: "Helmholtz Centre for Environmental Research - UFZ"
     email: ehsan.modiri@ufz.de
     orcid: "https://orcid.org/0000-0002-4432-0343"
-version: 1.0.1
+version: 1.1.0
 doi: 10.5281/zenodo.23471091
 date-released: 2026-10-19
 license: MIT

@@ -29,6 +29,7 @@ scripts/             one script per figure or table (list below)
 build_data.py        builds the input table from the benchmarking output (run once, on EVE)
 download_data.py     fetches the input data from Zenodo into data/
 run_all.py           runs every script in order
+pipeline/            the benchmarking workflow that produced the scores (runs on the full simulations; see pipeline/README.md)
 environment.yml      conda environment
 ```
 

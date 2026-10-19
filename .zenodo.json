@@ -1,8 +1,8 @@
 {
   "title": "Codebase for: Assessing the Added Value of Earth Observations for Multi-Model Kilometre-Scale Hydrological Modelling Across Contrasting Basins",
   "upload_type": "software",
-  "version": "1.0.1",
-  "description": "<p>Python code to reproduce the figures and tables of the manuscript <em>Assessing the Added Value of Earth Observations for Multi-Model Kilometre-Scale Hydrological Modelling Across Contrasting Basins</em> (Water Resources Research, 2025WR042446). The study evaluates up to five hydrological and land-surface models (CLM, JULES, mHM, PCR-GLOBWB and TETIS) at about 1&nbsp;km in the Po, Rhine and Tugela basins, driven by conventional or EO-based (HYPER-P) precipitation and calibrated against EO soil moisture, evapotranspiration and snow cover, alone or together with discharge.</p><p>The scripts start from the gauge-level daily KGE scores archived separately on Zenodo; <code>download_data.py</code> retrieves them and <code>run_all.py</code> regenerates all outputs.</p>",
+  "version": "1.1.0",
+  "description": "<p>Python code to reproduce the figures and tables of the manuscript <em>Assessing the Added Value of Earth Observations for Multi-Model Kilometre-Scale Hydrological Modelling Across Contrasting Basins</em> (Water Resources Research, 2025WR042446). The study evaluates up to five hydrological and land-surface models (CLM, JULES, mHM, PCR-GLOBWB and TETIS) at about 1&nbsp;km in the Po, Rhine and Tugela basins, driven by conventional or EO-based (HYPER-P) precipitation and calibrated against EO soil moisture, evapotranspiration and snow cover, alone or together with discharge.</p><p>The repository also contains the benchmarking workflow (<code>pipeline/</code>) that computed the gauge-level scores from the model simulations. The scripts start from the gauge-level daily KGE scores archived separately on Zenodo; <code>download_data.py</code> retrieves them and <code>run_all.py</code> regenerates all outputs.</p>",
   "creators": [
     {
       "name": "Modiri, Ehsan",
