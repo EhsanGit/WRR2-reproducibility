@@ -14,9 +14,9 @@ from pathlib import Path
 
 import requests
 
-# Zenodo record of the dataset. Not published yet: fill in the record number
-# (and the DOI in README.md, CITATION.cff and .zenodo.json) after the upload.
-ZENODO_RECORD = None  # e.g. '12345678' for doi:10.5281/zenodo.12345678
+# Zenodo concept record of the dataset (doi:10.5281/zenodo.23472975); the latest
+# version is downloaded.
+ZENODO_RECORD = '23472975'
 DATA_DIR = Path(__file__).resolve().parent / 'data'
 
 
@@ -24,7 +24,7 @@ def main():
     if ZENODO_RECORD is None:
         sys.exit('The dataset is not on Zenodo yet (ZENODO_RECORD is not set). '
                  'Build it with build_data.py and place it under data/kge/.')
-    api = f'https://zenodo.org/api/records/{ZENODO_RECORD}'
+    api = f'https://zenodo.org/api/records/{ZENODO_RECORD}/versions/latest'
     response = requests.get(api, timeout=60)
     response.raise_for_status()
     files = response.json()['files']

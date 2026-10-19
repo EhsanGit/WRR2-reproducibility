@@ -7,9 +7,9 @@ authors:
     affiliation: "Helmholtz Centre for Environmental Research - UFZ"
     email: ehsan.modiri@ufz.de
     orcid: "https://orcid.org/0000-0002-4432-0343"
-version: 1.0.0
-# doi: 10.5281/zenodo.XXXXXXX   (software DOI, add after the Zenodo release)
-date-released: 2026-10-16
+version: 1.0.1
+doi: 10.5281/zenodo.23471091
+date-released: 2026-10-19
 license: MIT
 repository-code: "https://github.com/EhsanGit/WRR2-reproducibility"
 keywords:
@@ -76,9 +76,9 @@ references:
         given-names: "Niko"
       - family-names: "Samaniego"
         given-names: "Luis"
-  # - type: dataset
-  #   title: "Gauge-level streamflow KGE for: Assessing the Added Value of Earth Observations ..."
-  #   doi: 10.5281/zenodo.XXXXXXX   (dataset DOI, add after the Zenodo upload)
-  #   authors:
-  #     - family-names: Modiri
-  #       given-names: Ehsan
+  - type: dataset
+    title: "Derived datasets for: Assessing the Added Value of Earth Observations for Multi-Model Kilometre-Scale Hydrological Modelling Across Contrasting Basins"
+    doi: 10.5281/zenodo.23472975
+    authors:
+      - family-names: Modiri
+        given-names: Ehsan

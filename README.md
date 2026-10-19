@@ -6,7 +6,7 @@ This repository contains the code to reproduce the figures and tables of
 
 The study runs up to five hydrological and land-surface models (CLM, JULES, mHM, PCR-GLOBWB and TETIS) at about 1 km in the Po, Rhine and Tugela basins. It compares a baseline with conventional precipitation (EMO-1, CHIRPS in the Tugela), discharge calibration, EO precipitation (HYPER-P), calibration against EO soil moisture, evapotranspiration and snow cover, and joint calibration against EO data and discharge. Skill is the daily Kling–Gupta efficiency (KGE) and its components at each gauge.
 
-The scripts start from the gauge-level KGE scores of all model–experiment–basin combinations. These are archived separately on Zenodo (doi: to be added). The model simulations are listed in the 4DHydro Open Science Catalogue (https://4dhydro.eu/catalog/).
+The scripts start from the gauge-level KGE scores of all model–experiment–basin combinations. These are archived separately on Zenodo ([doi:10.5281/zenodo.23472975](https://doi.org/10.5281/zenodo.23472975)). The model simulations are listed in the 4DHydro Open Science Catalogue (https://4dhydro.eu/catalog/).
 
 ## Quick start
 
@@ -72,7 +72,7 @@ KGE follows Gupta et al. (2009) and compares daily simulated discharge with obse
 
 ## Citation
 
-If you use this code, please cite the article and this repository (doi: to be added); see `CITATION.cff`.
+If you use this code, please cite the article and this repository ([doi:10.5281/zenodo.23471091](https://doi.org/10.5281/zenodo.23471091)); see `CITATION.cff`.
 
 ## Licence
 
